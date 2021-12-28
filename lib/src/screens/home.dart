@@ -1,6 +1,5 @@
 import 'dart:math';
 
-import 'package:firebasemiftah/kasir/main2.dart';
 import 'package:firebasemiftah/src/screens/detail.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
@@ -38,12 +37,6 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          leading: IconButton(
-              onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => MainHome()));
-              },
-              icon: Icon(Icons.dangerous)),
           title: Text("kasir harapan"),
         ),
         floatingActionButton: FloatingActionButton(

@@ -5,11 +5,10 @@ import 'hasilpembelian.dart';
 import 'result.dart';
 import 'dart:math';
 import 'home.dart';
-import 'package:firebasemiftah/kasir/round_icon_button.dart';
 import 'package:firebasemiftah/src/screens/hasilpembelian.dart';
 import 'package:flutter/material.dart';
 import 'result.dart';
-
+import 'roundicon.dart';
 import 'package:http/http.dart' as http;
 
 import 'calculate.dart';
@@ -25,7 +24,7 @@ import 'package:universal_html/html.dart' show AnchorElement;
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'dart:convert';
 import 'package:path_provider/path_provider.dart';
-import 'package:firebasemiftah/kasir/main2.dart';
+
 import 'package:firebasemiftah/src/screens/detail.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
@@ -92,23 +91,11 @@ class _detailState extends State<detail> {
 
   late int index;
   //var hargafetch =fetchdata.int
-  void show() => print("dor");
+
   void deleteData() {
     var url = "http://192.168.12.1/deleteData.php";
 
     http.post(url, body: {'id': widget.list[widget.index]['id']});
-  }
-
-  void fetchdata() {
-    var pesan = "http://192.168.12.1/getdata.php";
-    Text(
-      "Harga : ${widget.list[widget.index]['price']}",
-      style: TextStyle(fontSize: 20),
-    );
-  }
-
-  void fetchdatas() {
-    print("do something");
   }
 
   void confirm() {
@@ -264,18 +251,6 @@ class _detailState extends State<detail> {
                             MaterialPageRoute(
                                 builder: (context) => hasilbeli(
                                       jumlah: jumlah,
-                                    )));
-                      },
-                    ),
-                    RaisedButton(
-                      child: Text("excel"),
-                      color: Colors.blue,
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => excelkasir(
-                                      title: 'woi',
                                     )));
                       },
                     ),

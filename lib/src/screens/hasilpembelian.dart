@@ -1,8 +1,11 @@
 import 'dart:convert';
+import 'dart:ui';
 
+import 'package:firebasemiftah/src/screens/exceljumlah.dart';
 import 'package:flutter/material.dart';
 import 'detail.dart';
 import 'package:http/http.dart' as http;
+import 'excell.dart';
 import 'home.dart';
 
 class hasilbeli extends StatelessWidget {
@@ -55,10 +58,38 @@ class hasilbeli extends StatelessWidget {
                 ),
               ],
             ),
-            Row(
+            Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               //jumlah di deklar dan dijadikan string
-              children: <Widget>[Text(jumlah.toString())],
+
+              children: <Widget>[
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "Jumlah Barang:",
+                      style: TextStyle(
+                        fontSize: 30,
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                    Text(
+                      jumlah.toString(),
+                      style:
+                          TextStyle(fontSize: 30, fontWeight: FontWeight.w600),
+                    ),
+                  ],
+                ),
+                RaisedButton(
+                    child: Text('simpan excel'),
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  excelkasirr(Jumlah: jumlah)));
+                    })
+              ],
             ),
           ],
         ),
