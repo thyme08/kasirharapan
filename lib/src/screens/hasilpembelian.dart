@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:ui';
 
 import 'package:firebasemiftah/src/screens/exceljumlah.dart';
+import 'package:firebasemiftah/src/screens/googlesheet/kasirexcel.dart';
 import 'package:flutter/material.dart';
 import 'detail.dart';
 import 'package:http/http.dart' as http;
@@ -86,8 +87,12 @@ class hasilbeli extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) =>
-                                  excelkasirr(Jumlah: jumlah)));
+                              builder: (context) => excellah(
+                                    dorr: jumlah,
+                                  )
+                              // builder: (context) =>
+                              //     excelkasirr(Jumlah: jumlah)
+                              ));
                     })
               ],
             ),

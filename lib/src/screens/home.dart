@@ -59,6 +59,8 @@ class HomeScreen extends StatelessWidget {
 }
 
 class Itemlist extends StatelessWidget {
+  var hargabaranggg = 2;
+
   final List list;
   Itemlist({required this.list});
 
@@ -80,8 +82,11 @@ class Itemlist extends StatelessWidget {
                 child: TextButton(
                     onPressed: () =>
                         Navigator.of(context).push(MaterialPageRoute(
-                          builder: (BuildContext context) =>
-                              detail(index: i, list: list),
+                          builder: (BuildContext context) => detail(
+                            index: i,
+                            list: list,
+                            hargasss: hargabaranggg,
+                          ),
                         )),
                     // child: Image.network(list[i]["gambar"])
                     child: Text(list[i]["item_name"])

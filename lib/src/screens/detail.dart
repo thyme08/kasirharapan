@@ -1,6 +1,6 @@
 import 'dart:core';
 import 'package:firebasemiftah/src/screens/excell.dart';
-
+import 'googlesheet/kasirexcel.dart';
 import 'hasilpembelian.dart';
 import 'result.dart';
 import 'dart:math';
@@ -41,55 +41,29 @@ import 'tambahdata.dart';
 class detail extends StatefulWidget {
   final List list;
 
-  Future<List> getdataa() async {
-    final respone =
-        await http.get(Uri.parse("http://192.168.12.1/getdata.php"));
-    return json.decode(respone.body);
-  }
-
-  //int hargass =() ;
-
-  //Itemlist( detail({required this.index, required this.list});{required this.list});
   int index;
-  detail({required this.index, required this.list});
+
+  var hargasss;
+  detail({required this.index, required this.list, required this.hargasss});
 
   @override
-  _detailState createState() => _detailState();
+  _detailState createState() => _detailState(hargasss: hargasss);
 }
-
-// abstract class hargawoi extends StatefulWidget {
-//   Future  main() async{ var settings = ConnectionSettings(
-//       host: 'localhost',
-//       port: 3306,
-//       user: 'miftah',
-//       password: '1301zz1301hh',
-//       db: 'toko_miftah');
-//       var conn = await MySqlConnection.connect(settings);
-//   @override
-//   _hargawoiState createState() => _hargawoiState();}
-
-// }
-
-// class _hargawoiState extends State<hargawoi> {
-//   @override
-//   Widget build(BuildContext context) {
-//     return Text('');
-//   }
-// }
-// HARGA BARANG BENTUK TEXT!!!    //  "Harga satuan : ${widget.list[widget.index]['price']}",
-//         style: TextStyle(fontSize: 20),
 
 class _detailState extends State<detail> {
   // late String namaBarang;
   //late String fetchdatas;
   // late String hargabarangg;
+  _detailState({required this.hargasss});
+  var hargasss;
   int jumlah = 0;
-  int harga = 2;
+
+  // var hargass = "Harga : ${widgett.list[widget.index]['price']}";
+
   //final String title;
 
   //var hargaya = {url: 'http://192.168.12.1/celana1.jpg'};
 
-  late int index;
   //var hargafetch =fetchdata.int
 
   void deleteData() {
@@ -191,31 +165,46 @@ class _detailState extends State<detail> {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Text(
-                      "Harga : ${widget.list[widget.index]['price']}",
+                      "Harga : ${widget.list[widget.index]['price']}"
+                          .toString(),
                       style: TextStyle(fontSize: 20),
-                    ),
-                    Text(
-                      harga.toString(),
-                      style: TextStyle(
-                        fontSize: 28,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    Text(
-                      //int jumlah ke string
-                      jumlah.toString(),
-                      style: TextStyle(
-                        fontSize: 28,
-                        fontWeight: FontWeight.bold,
-                      ),
                     ),
                     Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Padding(padding: EdgeInsets.all(10)),
-                        Text("Jumlah"),
+                        Text(
+                          "Jumlah",
+                          style: TextStyle(fontSize: 20),
+                        ),
+                        Text(
+                          //int jumlah ke string
+                          jumlah.toString(),
+                          style: TextStyle(
+                            fontSize: 38,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
                       ],
-                    )
+                    ),
+                    // Row(
+                    //   mainAxisSize: MainAxisSize.min,
+                    //   children: [
+                    //     Padding(padding: EdgeInsets.all(10)),
+                    //     Text(
+                    //       "harga",
+                    //       style: TextStyle(fontSize: 20),
+                    //     ),
+                    //     Text(
+                    //       //int jumlah ke string
+                    //       hargasss.toString(),
+                    //       style: TextStyle(
+                    //         fontSize: 38,
+                    //         fontWeight: FontWeight.bold,
+                    //       ),
+                    //     ),
+                    //   ],
+                    // )
                   ],
                 ),
                 Row(
@@ -237,6 +226,22 @@ class _detailState extends State<detail> {
                         });
                       },
                     ),
+                    // RoundIconButton(
+                    //   icon: Icons.delete,
+                    //   onPressed: () {
+                    //     setState(() {
+                    //       hargasss--;
+                    //     });
+                    //   },
+                    // ),
+                    // RoundIconButton(
+                    //   icon: Icons.add,
+                    //   onPressed: () {
+                    //     setState(() {
+                    //       hargasss++;
+                    //     });
+                    //   },
+                    // ),
                   ],
                 ),
                 Row(
@@ -249,6 +254,8 @@ class _detailState extends State<detail> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
+                                // builder: (context) => excellah(),
+
                                 builder: (context) => hasilbeli(
                                       jumlah: jumlah,
                                     )));

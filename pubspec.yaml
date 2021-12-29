@@ -43,6 +43,7 @@ dependencies:
   convert: ^2.1.1
   path_provider: ^2.0.8
   open_file: ^3.2.1
+  url_launcher:
   universal_html: ^1.2.4
 
  

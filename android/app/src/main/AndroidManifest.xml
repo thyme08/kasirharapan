@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.firebasemiftah">
    <application
-        android:label="firebasemiftah"
+        android:label="kasirharapan"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
