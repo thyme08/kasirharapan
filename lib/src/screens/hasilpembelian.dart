@@ -15,7 +15,7 @@ class hasilbeli extends StatelessWidget {
   final int jumlah;
   Future<List> getdataa() async {
     final respone =
-        await http.get(Uri.parse("http://192.168.12.1/getdata.php"));
+        await http.get(Uri.parse("http://139.0.189.48/getdata.php"));
     return json.decode(respone.body);
   }
 

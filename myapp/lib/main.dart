@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
 class HomeScreen extends StatelessWidget {
   Future<List> getdataa() async {
     final respone =
-        await http.get(Uri.parse("http://192.168.12.1/getdata.php"));
+        await http.get(Uri.parse("http://139.0.188.142/getdata.php"));
     return json.decode(respone.body);
   }
 

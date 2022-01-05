@@ -54,8 +54,14 @@ class _detailState extends State<detail> {
   // late String namaBarang;
   //late String fetchdatas;
   // late String hargabarangg;
+
+  //
   _detailState({required this.hargasss});
+
   var hargasss;
+
+  //variabel jumlah dimulai dari 0
+
   int jumlah = 0;
 
   // var hargass = "Harga : ${widgett.list[widget.index]['price']}";
@@ -65,13 +71,14 @@ class _detailState extends State<detail> {
   //var hargaya = {url: 'http://192.168.12.1/celana1.jpg'};
 
   //var hargafetch =fetchdata.int
-
+//void deletedata dipanggil dari file deletedata.php dari server
   void deleteData() {
-    var url = "http://192.168.12.1/deleteData.php";
+    var url = "http://139.0.189.48/deleteData.php";
 
     http.post(url, body: {'id': widget.list[widget.index]['id']});
   }
 
+//metode ini untuk mengkonfirm delete data
   void confirm() {
     showDialog(
         context: context,
@@ -83,6 +90,7 @@ class _detailState extends State<detail> {
                   TextButton(
                       child: const Text("Hapus"),
                       onPressed: () {
+                        //panggil metode delete data
                         deleteData();
                         Navigator.of(context).pushReplacement(MaterialPageRoute(
                             builder: (context) => HomeScreen()));

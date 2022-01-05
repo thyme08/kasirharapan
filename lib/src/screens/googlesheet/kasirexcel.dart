@@ -15,6 +15,7 @@ class hasilpembelian extends StatelessWidget {
 }
 
 class excellah extends StatelessWidget {
+  //variabel pendukung kasir dorr
   var dorr;
 
   excellah({required this.dorr});
@@ -55,7 +56,7 @@ class _hasilpembelian extends State<MyHomePage> {
   TextEditingController npmController = TextEditingController();
   TextEditingController nilai1NoController = TextEditingController();
   TextEditingController nilai2Controller = TextEditingController();
-
+//variabel yang dibuat
   var duar;
   var noll = null;
 
@@ -66,6 +67,7 @@ class _hasilpembelian extends State<MyHomePage> {
   void _submitForm() {
     if (_formKey.currentState!.validate()) {
       FeedbackForm feedbackForm = FeedbackForm(
+        //nilai yang dipanggil
         noll.toString(),
         //nameController.text,
 

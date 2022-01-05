@@ -174,6 +174,7 @@ class _register extends State<registerr> {
                               ),
                               onPressed: () {
                                 auth
+                                    //metode buat akun dan setelah berhasil langsung masuk ke home screen
                                     .createUserWithEmailAndPassword(
                                         email: _email, password: _password)
                                     .then((_) {

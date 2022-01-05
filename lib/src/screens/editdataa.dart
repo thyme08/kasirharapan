@@ -20,9 +20,9 @@ class _EditDataState extends State<EditData> {
   late TextEditingController controllerName;
   late TextEditingController controllerPrice;
   late TextEditingController controllerStock;
-
+//void edit data dari file servers
   void editData() {
-    var url = "http://192.168.12.1/editdata.php";
+    var url = "http://139.0.189.48/editdata.php";
     http.post(url, body: {
       "id": widget.list[widget.index]['id'],
       "itemcode": controllerCode.text,
@@ -34,6 +34,7 @@ class _EditDataState extends State<EditData> {
 
   @override
   void initState() {
+    //controller untuk edit file
     controllerCode =
         new TextEditingController(text: widget.list[widget.index]['item_code']);
     controllerName =

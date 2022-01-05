@@ -161,6 +161,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                         onPressed: () {
                           auth
+                              //metode sign in dan setelah berhasil dilarikan ke homescreen
                               .signInWithEmailAndPassword(
                                   email: _email, password: _password)
                               .then((_) {
@@ -174,7 +175,10 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               RaisedButton(
                 onPressed: () {
-                  Navigator.push(context,
+                  Navigator.push(
+                      context,
+
+                      //menuju register
                       MaterialPageRoute(builder: (context) => registerr()));
                 },
                 child: Text("Regiser"),

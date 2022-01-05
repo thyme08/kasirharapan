@@ -26,10 +26,11 @@ class MyApp extends StatelessWidget {
   }
 }
 
+//di class homescreen kita mengambil data dari file getdata.php dari server kita
 class HomeScreen extends StatelessWidget {
   Future<List> getdataa() async {
     final respone =
-        await http.get(Uri.parse("http://192.168.12.1/getdata.php"));
+        await http.get(Uri.parse("http://139.0.189.48/getdata.php"));
     return json.decode(respone.body);
   }
 
@@ -80,6 +81,8 @@ class Itemlist extends StatelessWidget {
               return Container(
                 alignment: Alignment.center,
                 child: TextButton(
+
+                    //ketika di klik masuk ke detail.dart
                     onPressed: () =>
                         Navigator.of(context).push(MaterialPageRoute(
                           builder: (BuildContext context) => detail(
@@ -89,6 +92,7 @@ class Itemlist extends StatelessWidget {
                           ),
                         )),
                     // child: Image.network(list[i]["gambar"])
+//TABEL LIST PRODUK
                     child: Text(list[i]["item_name"])
                     //  child: Image(image: AssetImage("assets/images/light-1.png")),
                     //   child: Image(image: (list[i]["gambar"])),

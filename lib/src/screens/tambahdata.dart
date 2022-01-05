@@ -15,7 +15,7 @@ class _tambahdataaState extends State<tambahdataa> {
   TextEditingController controllerPrice = new TextEditingController();
   TextEditingController controllerStock = new TextEditingController();
   void addData() {
-    var url = "http://192.168.12.1/adddata.php";
+    var url = "http://139.0.189.48/adddata.php";
     http.post(url, body: {
       "itemcode": controllerCode.text,
       "itemname": controllerName.text,
